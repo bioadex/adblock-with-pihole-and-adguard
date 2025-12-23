@@ -1,0 +1,15 @@
+services:
+  adguardhome:
+    container_name: adguardhome
+    image: adguard/adguardhome:latest
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8086:80/tcp"
+      - "3000:3000/tcp"
+    volumes:
+      - ./work:/opt/adguardhome/work
+      - ./conf:/opt/adguardhome/conf
+    environment:
+      - TZ=Europe/Berlin      # change this 
