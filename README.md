@@ -60,7 +60,7 @@ Step 5:
 Access pihole with Customized URL 
 pihole.yourdomain.com 
 
-Final Note:  If you encounter any problem you can consult google or chatgpd 
+Final Note:  If you encounter any problem you can consult google or chatgpt
 
 
 
