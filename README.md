@@ -14,6 +14,7 @@ My Pihole is version 6
 After you have confirm the pihole version if its version 6 follow this step to hide your ubuntu_server_ip 
 make sure that port 80 is free because nginx run on port 80 you can change pihole port to another port something like 8080 
 Used this command 
+
 sudo pihole-FTL --config webserver.port "8080,443os,[::]:8080,[::]:443os"      # move the pihole port to port 8080 
 
 sudo systemctl restart pihole-FTL    # to restart pihole-FTL 
