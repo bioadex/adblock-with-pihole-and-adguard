@@ -63,5 +63,17 @@ pihole.yourdomain.com
 
 Final Note:  If you encounter any problem you can consult google or chatgpt
 
+below are the visualization adguard dashboard
+
+<img width="1467" height="968" alt="image" src="https://github.com/user-attachments/assets/314369c4-813b-403e-9e94-4980ad57c251" />
+
+<img width="1234" height="944" alt="image" src="https://github.com/user-attachments/assets/d107acdf-3d66-40d0-accf-cbc52a18937c" />
+
+Pi-hole dashboard on Raspberrypi 
+<img width="1432" height="916" alt="image" src="https://github.com/user-attachments/assets/02b645ee-d73e-4142-97b3-ab0c6302fbd7" />
+
+<img width="1254" height="945" alt="image" src="https://github.com/user-attachments/assets/eea500f5-3a65-462c-909c-38435a0e4304" />
+
+
 
 
