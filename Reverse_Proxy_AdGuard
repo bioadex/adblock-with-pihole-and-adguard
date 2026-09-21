@@ -1,0 +1,61 @@
++++++++++++ Optional Using Ngnix as a Reverse Proxy for AdGuard +++++++++++++
+
+in this optional you can also use what i called NPM nginx proxy manager 
+
+follow this link <>  to know how to setup NPM 
+
+But here i will be using Nginx a as Reverse Proxy 
+
+First edit your docker file in the port section
+
+Now let your AdGuard port run on 8080 
+
+Here make sure you have nginx running on your ubuntu server on port 80 
+
+<check this link>   how to install nginx proxy
+
+if nginx is running and up 
+
+sudo systemctl start nginx 
+
+sudo systemctl status nginx 
+
+after nginx running then edit adguard DOCKER file 
+
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8080:80/tcp"    # Web interface
+      - "3000:3000/tcp"  # Initial setup port (optional)
+
+after use docker compose up 
+
+then try access URL of adGuard <http://<Your_Ubuntu_SERVER_IP>:8080>
+
+then edit the Nginx config file by adding this 
+
+server {
+    listen 80;
+    server_name adguard.example.com;        # change this (ubuntu_server_ip)
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+
+After reload nginx app
+
+sudo systemctl reload nginx 
+
+then after you can access AdGuard URL 
+
+just http://<ubuntu_server_ip>      or if you have custome name example adguard-aka-tech-it.info
+
+if you encounter any problem mostly will be port issues just search online how to solve it. 
+
+After all this look up how to use Adguard or read documentation to know how to block ads 
