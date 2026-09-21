@@ -1,0 +1,45 @@
+Setting up adguard on Ubuntu server 22.04.5 LTS with docker compose 
+
+Firstly you must have docker and docker compose installed
+
+if not you can not follow this link "How to install docker and docker compose"
+
+sudo apt-get update && sudo apt-get upgrade -y      # update & upgrade ubuntu server 
+
+after that make a folder inside your ubuntu server 
+
+mkdir -p ~/adguard      # make directory
+
+cd ~/adguard       # change directory 
+
+touch docker-compose.yml       # create file 
+
+after setting yaml file 
+
+docker compose up -d   # to start docker file and make sure you are in the directory that you have docker file 
+
+
+To access the URL of adguard visit (http://<your_server_ip>:3000)
+
+Optional if you want to use custom ports 
+
+edit your docker file and add this port below 
+
+ports:
+  - "53:53/tcp"
+  - "53:53/udp"
+  - "80:80/tcp"
+  - "3000:3000/tcp"        # if any app is running on port 3000 change the left number to 3002 
+
+
+Remove network_mode: host 
+
+add the above ports 
+
+To access the URL of adguard visit (http://<your_server_ip>:3000)
+
+
+if you encounter any problem mostly will be with the networking involving ports 
+
+Google,Youtube and ChatGPT is your best friend to solve it 
+
